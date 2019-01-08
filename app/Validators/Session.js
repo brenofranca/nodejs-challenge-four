@@ -1,5 +1,7 @@
 'use strict'
 
+const Antl = use('Antl')
+
 class Session {
   get validateAll () {
     return true
@@ -10,6 +12,10 @@ class Session {
       email: 'required|email',
       password: 'required|confirmed'
     }
+  }
+
+  get messages () {
+    return Antl.list('validation')
   }
 }
 
